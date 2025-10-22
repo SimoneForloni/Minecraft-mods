@@ -1,5 +1,7 @@
 package net.simone.primamod.item;
 
+import java.util.function.*;
+
 import net.simone.primamod.PrimaMod;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
@@ -10,12 +12,12 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
-import java.util.function.*;
 
-public class ModItems  {  
-  public static final Item PINK_GARNET = registerItem("pink_garnet", Item::new, new Item.Settings());
-  
-  public static Item registerItem(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
+public class ModItems {
+	public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings());
+	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet", Item::new, new Item.Settings());
+
+	public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		// Create the item key.
 		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PrimaMod.MOD_ID, name));
 
@@ -24,13 +26,16 @@ public class ModItems  {
 
 		// Register the item.
 		Registry.register(Registries.ITEM, itemKey, item);
-    
+
 		return item;
 	}
-  
-  public static void initialize() {
+
+	public static void initialize() {
 		// Get the event for modifying entries in the ingredients group.
 		// And register an event handler that adds our suspicious item to the ingredients group.
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((itemGroup) -> itemGroup.add(ModItems.PINK_GARNET));
-  }
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.add(ModItems.PINK_GARNET);
+			entries.add(ModItems.RAW_PINK_GARNET);
+		});
+	}
 }
