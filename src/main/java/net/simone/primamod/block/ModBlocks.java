@@ -1,5 +1,4 @@
-package net.simone.
-primamod.block;
+package net.simone.primamod.block;
 
 import java.util.function.*;
 
@@ -19,11 +18,8 @@ import net.minecraft.sound.BlockSoundGroup;
 
 public class ModBlocks {
 
-	public static final Block PINK_GARNET_BLOCK = register(
-		"pink_garnet_block", 
-    Block::new, 
-		AbstractBlock.Settings.create()
-      .strength(4f)
+	public static final Block PINK_GARNET_BLOCK = register("pink_garnet_block", Block::new, AbstractBlock.Settings.create()
+			.strength(4f)
       .requiresTool()
       .sounds(BlockSoundGroup.AMETHYST_BLOCK),
 			true
@@ -54,10 +50,10 @@ public class ModBlocks {
 
 			BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey).useBlockPrefixedTranslationKey());
 			Registry.register(Registries.ITEM, itemKey, blockItem);
-		}
 
-		return Registry.register(Registries.BLOCK, blockKey, block);
-	}
+		}
+	return Registry.register(Registries.BLOCK, blockKey, block);
+}
 
 	private static RegistryKey<Block> keyOfBlock(String name) {
 		return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(PrimaMod.MOD_ID, name));
@@ -66,6 +62,8 @@ public class ModBlocks {
 	private static RegistryKey<Item> keyOfItem(String name) {
 		return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PrimaMod.MOD_ID, name));
 	}
+
+	
 
 	public static void initialize() {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {

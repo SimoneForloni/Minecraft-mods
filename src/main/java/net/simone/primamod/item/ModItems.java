@@ -12,7 +12,6 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
-
 public class ModItems {
 	public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings());
 	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet", Item::new, new Item.Settings());
@@ -33,9 +32,9 @@ public class ModItems {
 	public static void initialize() {
 		// Get the event for modifying entries in the ingredients group.
 		// And register an event handler that adds our suspicious item to the ingredients group.
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
-			entries.add(ModItems.PINK_GARNET);
-			entries.add(ModItems.RAW_PINK_GARNET);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((ItemGroup) -> {
+			ItemGroup.add(ModItems.PINK_GARNET);
+			ItemGroup.add(ModItems.RAW_PINK_GARNET);
 		});
 	}
 }

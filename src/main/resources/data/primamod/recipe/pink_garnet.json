@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "building",
+  "ingredients": [
+    "primamod:pink_garnet_block"
+  ],
+  "category": "misc",
+  "result": {
+    "id": "primamod:pink_garnet",
+    "count": 9
+  }
+}
