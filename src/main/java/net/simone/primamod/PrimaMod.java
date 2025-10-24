@@ -2,6 +2,7 @@ package net.simone.primamod;
 
 import net.fabricmc.api.ModInitializer;
 import net.simone.primamod.block.ModBlocks;
+import net.simone.primamod.effect.ModEffects;
 import net.simone.primamod.item.ModItems;
 
 import org.slf4j.Logger;
@@ -15,5 +16,6 @@ public class PrimaMod implements ModInitializer {
 	public void onInitialize() {
 		ModItems.initialize();
 		ModBlocks.initialize();
+		ModEffects.initialize();
 	}
 }
