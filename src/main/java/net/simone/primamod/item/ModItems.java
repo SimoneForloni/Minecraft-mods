@@ -1,8 +1,9 @@
 package net.simone.primamod.item;
 
-import java.util.function.*;
-
 import net.simone.primamod.PrimaMod;
+
+import java.util.function.Function; 
+
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;

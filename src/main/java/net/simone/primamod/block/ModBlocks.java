@@ -1,8 +1,9 @@
 package net.simone.primamod.block;
 
+import net.simone.primamod.PrimaMod;
+
 import java.util.function.*;
 
-import net.simone.primamod.PrimaMod;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
