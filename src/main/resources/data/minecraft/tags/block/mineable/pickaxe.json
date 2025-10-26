@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "primamod:pink_garnet_block",
+    "primamod:raw_pink_garnet_block",
+    "primamod:pink_garnet_ore",
+    "primamod:pink_garnet_deepslate_ore"
+  ]
+}
