@@ -18,6 +18,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.sound.BlockSoundGroup;
+import net.simone.primamod.block.custom.MagicBlock;
 
 public class ModBlocks {
 
@@ -30,10 +31,9 @@ public class ModBlocks {
 			.sounds(BlockSoundGroup.AMETHYST_BLOCK),
 			true
 	);
-  
 	public static final Block RAW_PINK_GARNET_BLOCK = register(
-		"raw_pink_garnet_block", 
-    	Block::new, 
+		"raw_pink_garnet_block",
+		Block::new,
 		AbstractBlock.Settings.create()
 			.strength(3f)
 			.requiresTool()
@@ -50,9 +50,19 @@ public class ModBlocks {
 			.sounds(BlockSoundGroup.STONE),
 			true
 	);
-		public static final Block PINK_GARNET_DEEPSLATE_ORE = register(
-		"pink_garnet_deepslate_ore", 
-		(settings) -> new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), settings), 
+	public static final Block PINK_GARNET_DEEPSLATE_ORE = register(
+		"pink_garnet_deepslate_ore",
+		(settings) -> new ExperienceDroppingBlock(UniformIntProvider.create(2, 5), settings),
+		AbstractBlock.Settings.create()
+			.strength(4.5f)
+			.requiresTool()
+			.sounds(BlockSoundGroup.DEEPSLATE),
+			true
+	);
+	
+	public static final Block MAGIC_BLOCK = register(
+		"magic_block",
+		MagicBlock::new,
 		AbstractBlock.Settings.create()
 			.strength(4.5f)
 			.requiresTool()
@@ -73,8 +83,8 @@ public class ModBlocks {
 			Registry.register(Registries.ITEM, itemKey, blockItem);
 		}
 		
-	return Registry.register(Registries.BLOCK, blockKey, block);
-}
+		return Registry.register(Registries.BLOCK, blockKey, block);
+	}
 
 	private static RegistryKey<Block> keyOfBlock(String name) {
 		return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(PrimaMod.MOD_ID, name));
@@ -93,6 +103,8 @@ public class ModBlocks {
 
 			itemGroup.add(ModBlocks.PINK_GARNET_ORE.asItem());
 			itemGroup.add(ModBlocks.PINK_GARNET_DEEPSLATE_ORE.asItem());
+			
+			itemGroup.add(ModBlocks.MAGIC_BLOCK.asItem());
 		});
 	}
 }

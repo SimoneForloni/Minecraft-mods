@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "primamod:block/magic_block"
+    }
+  }
+}

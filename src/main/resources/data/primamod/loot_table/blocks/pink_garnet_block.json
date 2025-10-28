@@ -8,11 +8,6 @@
           "type": "minecraft:item",
           "name": "primamod:pink_garnet_block"
         }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
       ]
     }
   ]

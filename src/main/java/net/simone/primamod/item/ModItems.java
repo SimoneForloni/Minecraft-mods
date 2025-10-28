@@ -12,10 +12,13 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.simone.primamod.item.custom.ChiselItem;
 
 public class ModItems {
 	public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings());
 	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet", Item::new, new Item.Settings());
+	
+	public static final Item CHISEL = register("chisel", ChiselItem::new, new Item.Settings().maxDamage(32 ));
 
 	public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		// Create the item key.
@@ -36,6 +39,8 @@ public class ModItems {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((ItemGroup) -> {
 			ItemGroup.add(ModItems.PINK_GARNET);
 			ItemGroup.add(ModItems.RAW_PINK_GARNET);
+			
+			ItemGroup.add(ModItems.CHISEL);
 		});
 	}
 }
