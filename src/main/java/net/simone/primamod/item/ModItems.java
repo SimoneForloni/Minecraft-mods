@@ -12,13 +12,22 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.simone.primamod.item.custom.ChiselItem;
 
 public class ModItems {
-	public static final Item PINK_GARNET = register("pink_garnet", Item::new, new Item.Settings());
-	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet", Item::new, new Item.Settings());
+	// private static final Item.Settings TOOL_SETTINGS = new Item.Settings().maxCount(1);
+	// private static final Item.Settings MATERIAL_SETTINGS = new Item.Settings().maxCount(64);
+
+	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet");
+
+	public static final Item PINK_GARNET = register("pink_garnet");
 	
-	public static final Item CHISEL = register("chisel", ChiselItem::new, new Item.Settings().maxDamage(32 ));
+	public static Item register(String name) {
+		return register(name, Item::new, new Item.Settings());
+	}
+
+	public static Item register(String name, Item.Settings settings) {
+		return register(name, Item::new, settings);
+	}
 
 	public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		// Create the item key.
@@ -34,13 +43,12 @@ public class ModItems {
 	}
 
 	public static void initialize() {
-		// Get the event for modifying entries in the ingredients group.
-		// And register an event handler that adds our suspicious item to the ingredients group.
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register((ItemGroup) -> {
-			ItemGroup.add(ModItems.PINK_GARNET);
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ItemGroup -> {
 			ItemGroup.add(ModItems.RAW_PINK_GARNET);
+
+			ItemGroup.add(ModItems.PINK_GARNET);
 			
-			ItemGroup.add(ModItems.CHISEL);
+			ItemGroup.add(ModTools.CHISEL);
 		});
 	}
 }

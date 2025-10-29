@@ -1,4 +1,4 @@
-package net.simone.primamod.item.custom;
+package net.simone.primamod.item.tools;
 
 import java.util.Map;
 
@@ -17,19 +17,19 @@ import net.simone.primamod.block.ModBlocks;
 
 public class ChiselItem extends Item {
 	private static final Map<Block, Block> CHISEL_MAP =
-			Map.of(
-					Blocks.STONE, Blocks.CHISELED_STONE_BRICKS,
-					Blocks.END_STONE, Blocks.END_STONE_BRICKS,
-					Blocks.OAK_LOG, ModBlocks.PINK_GARNET_BLOCK,
-					Blocks.GOLD_BLOCK, Blocks.NETHERITE_BLOCK
-			);
+		Map.of(
+			Blocks.STONE, Blocks.CHISELED_STONE_BRICKS,
+			Blocks.END_STONE, Blocks.END_STONE_BRICKS,
+			Blocks.OAK_LOG, ModBlocks.PINK_GARNET_BLOCK,
+			Blocks.GOLD_BLOCK, Blocks.NETHERITE_BLOCK
+	);
 
 	public ChiselItem(Settings settings) {
 		super(settings);
-	}
+			}
 
-	 @Override
-	 public ActionResult useOnBlock(ItemUsageContext context) {
+			@Override
+			public ActionResult useOnBlock(ItemUsageContext context) {
 		
 		World world = context.getWorld();
 		Block clickedBlock = world.getBlockState(context.getBlockPos()).getBlock();
@@ -37,14 +37,13 @@ public class ChiselItem extends Item {
 		if(CHISEL_MAP.containsKey(clickedBlock)) {
 			if(!world.isClient()) {
 				world.setBlockState(context.getBlockPos(), CHISEL_MAP.get(clickedBlock).getDefaultState());
-				
-				context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()),
-						item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
-				
+
+				context.getStack().damage(1, ((ServerWorld) world), ((ServerPlayerEntity) context.getPlayer()), item -> context.getPlayer().sendEquipmentBreakStatus(item, EquipmentSlot.MAINHAND));
+			
 				world.playSound(null, context.getBlockPos(), SoundEvents.BLOCK_GRINDSTONE_USE, SoundCategory.BLOCKS);
-			}
+				}
 		}
 
 		return ActionResult.SUCCESS;
-	 }
- }
+  }
+}
