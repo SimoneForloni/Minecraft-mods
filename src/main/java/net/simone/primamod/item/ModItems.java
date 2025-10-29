@@ -14,11 +14,7 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 
 public class ModItems {
-	// private static final Item.Settings TOOL_SETTINGS = new Item.Settings().maxCount(1);
-	// private static final Item.Settings MATERIAL_SETTINGS = new Item.Settings().maxCount(64);
-
 	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet");
-
 	public static final Item PINK_GARNET = register("pink_garnet");
 	
 	public static Item register(String name) {
@@ -30,24 +26,16 @@ public class ModItems {
 	}
 
 	public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
-		// Create the item key.
 		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PrimaMod.MOD_ID, name));
-
-		// Create the item instance.
 		Item item = itemFactory.apply(settings.registryKey(itemKey));
-
-		// Register the item.
 		Registry.register(Registries.ITEM, itemKey, item);
-
 		return item;
 	}
 
 	public static void initialize() {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ItemGroup -> {
 			ItemGroup.add(ModItems.RAW_PINK_GARNET);
-
 			ItemGroup.add(ModItems.PINK_GARNET);
-			
 			ItemGroup.add(ModTools.CHISEL);
 		});
 	}
