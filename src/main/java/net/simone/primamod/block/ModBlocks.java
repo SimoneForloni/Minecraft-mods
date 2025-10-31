@@ -96,7 +96,7 @@ public class ModBlocks {
 
 	
 
-	public static void initialize() {
+	public static void init() {
 		ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register((itemGroup) -> {
 			itemGroup.add(ModBlocks.PINK_GARNET_BLOCK.asItem());
 			itemGroup.add(ModBlocks.RAW_PINK_GARNET_BLOCK.asItem());

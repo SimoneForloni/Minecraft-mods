@@ -27,16 +27,18 @@ public class ModItems {
 
 	public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 		RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PrimaMod.MOD_ID, name));
+
 		Item item = itemFactory.apply(settings.registryKey(itemKey));
+
 		Registry.register(Registries.ITEM, itemKey, item);
+
 		return item;
 	}
 
-	public static void initialize() {
-		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(ItemGroup -> {
-			ItemGroup.add(ModItems.RAW_PINK_GARNET);
-			ItemGroup.add(ModItems.PINK_GARNET);
-			ItemGroup.add(ModTools.CHISEL);
+	public static void init() {
+		ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
+			entries.add(ModItems.RAW_PINK_GARNET);
+			entries.add(ModItems.PINK_GARNET);
 		});
 	}
 }
