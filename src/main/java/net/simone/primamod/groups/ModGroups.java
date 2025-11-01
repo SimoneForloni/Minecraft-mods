@@ -9,10 +9,10 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.simone.primamod.PrimaMod;
-import net.simone.primamod.block.ModBlocks;
-import net.simone.primamod.item.ModItems;
-import net.simone.primamod.item.ModTools;
+import net.simone.primamod.block.blocks.ModBlocks;
+import net.simone.primamod.init.PrimaMod;
+import net.simone.primamod.item.items.ModItems;
+import net.simone.primamod.item.tools.ModTools;
 
 public class ModGroups {
 	// Create the registry key

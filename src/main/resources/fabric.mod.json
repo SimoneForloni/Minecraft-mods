@@ -16,13 +16,13 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"net.simone.primamod.PrimaMod"
+			"net.simone.primamod.init.PrimaMod"
 		],
 		"fabric-datagen": [
-			"net.simone.primamod.PrimaModDataGenerator"
+			"net.simone.primamod.init.PrimaModDataGenerator"
 		],
 		"client": [
-			"net.simone.primamod.PrimaModClient"
+			"net.simone.primamod.init.PrimaModClient"
 		]
 	},
 	"mixins": [

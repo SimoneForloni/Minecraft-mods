@@ -1,11 +1,11 @@
-package net.simone.primamod;
+package net.simone.primamod.init;
 
 import net.fabricmc.api.ModInitializer;
-import net.simone.primamod.block.ModBlocks;
+import net.simone.primamod.block.blocks.ModBlocks;
 import net.simone.primamod.effect.ModEffects;
 import net.simone.primamod.groups.ModGroups;
-import net.simone.primamod.item.ModItems;
-import net.simone.primamod.item.ModTools;
+import net.simone.primamod.item.items.ModItems;
+import net.simone.primamod.item.tools.ModTools;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

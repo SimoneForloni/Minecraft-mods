@@ -1,6 +1,4 @@
-package net.simone.primamod.item;
-
-import net.simone.primamod.PrimaMod;
+package net.simone.primamod.item.items;
 
 import java.util.function.Function; 
 
@@ -12,6 +10,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.simone.primamod.init.PrimaMod;
 
 public class ModItems {
 	public static final Item RAW_PINK_GARNET = register("raw_pink_garnet");

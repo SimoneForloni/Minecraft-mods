@@ -1,8 +1,7 @@
 package net.simone.primamod.effect;
 
 import net.simone.primamod.effect.effects.*;
-import net.simone.primamod.PrimaMod;
-
+import net.simone.primamod.init.PrimaMod;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;

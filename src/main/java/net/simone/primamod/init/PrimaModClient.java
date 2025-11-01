@@ -1,4 +1,4 @@
-package net.simone.primamod;
+package net.simone.primamod.init;
 
 import net.fabricmc.api.ClientModInitializer;
 

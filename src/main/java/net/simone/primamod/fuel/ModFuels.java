@@ -1,8 +1,8 @@
 package net.simone.primamod.fuel;
 
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
-import net.simone.primamod.block.ModBlocks;
-import net.simone.primamod.item.ModItems;
+import net.simone.primamod.block.blocks.ModBlocks;
+import net.simone.primamod.item.items.ModItems;
 
 public class ModFuels {
 	

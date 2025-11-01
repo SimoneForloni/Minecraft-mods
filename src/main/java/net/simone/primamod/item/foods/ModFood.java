@@ -1,4 +1,4 @@
-package net.simone.primamod.item;
+package net.simone.primamod.item.foods;
 
 import net.minecraft.component.type.FoodComponent;
 
