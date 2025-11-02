@@ -1,12 +1,11 @@
-package net.simone.primamod.fuel;
+package net.simone.primamod.item;
 
 import net.fabricmc.fabric.api.registry.FuelRegistryEvents;
-import net.simone.primamod.block.blocks.ModBlocks;
-import net.simone.primamod.item.items.ModItems;
+import net.simone.primamod.block.ModBlocks;
 
 public class ModFuels {
 	
-	public static void initialize() {
+	public static void init() {
 		// In Fabric 1.21.10, si usa FuelRegistryEvents invece di FuelRegistry.INSTANCE
 		
 		FuelRegistryEvents.BUILD.register((builder, context) -> {

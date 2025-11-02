@@ -15,7 +15,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.simone.primamod.item.items.ModItems;
+import net.simone.primamod.item.ModItems;
 
 public class MagicBlock extends Block {
     public MagicBlock(Settings settings) {

@@ -12,7 +12,7 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.world.World;
-import net.simone.primamod.block.blocks.ModBlocks;
+import net.simone.primamod.block.ModBlocks;
 
 public class ChiselItem extends Item {
 	private static final Map<Block, Block> CHISEL_MAP = Map.of(

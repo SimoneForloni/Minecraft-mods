@@ -1,4 +1,4 @@
-package net.simone.primamod.block.blocks;
+package net.simone.primamod.block;
 
 import java.util.function.*;
 
@@ -16,6 +16,7 @@ import net.minecraft.item.ItemGroups;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.sound.BlockSoundGroup;
+import net.simone.primamod.block.blocks.MagicBlock;
 import net.simone.primamod.init.PrimaMod;
 
 public class ModBlocks {

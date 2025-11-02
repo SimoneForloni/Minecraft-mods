@@ -1,4 +1,4 @@
-package net.simone.primamod.item.foods;
+package net.simone.primamod.item;
 
 import net.minecraft.component.type.FoodComponent;
 
@@ -7,4 +7,8 @@ public class ModFood {
 		.nutrition(3)
 		.saturationModifier(0.25f)
 		.build();
+
+	public static void init() {
+		
+	}
 }
