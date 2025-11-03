@@ -1,0 +1,6 @@
+// 1.21.10	-999999999-01-01T00:00:00	PrimaMod/Block Loot Tables
+9b242955294c5fc17f9d6a18546328a9e11e2ccc data/primamod/loot_table/blocks/magic_block.json
+cf278fc590682ecf0a62dfd57c2f4dac007cdc15 data/primamod/loot_table/blocks/pink_garnet_block.json
+f0ffc56aeddb9de2f2b62eb5c1a2018f577d704d data/primamod/loot_table/blocks/pink_garnet_deepslate_ore.json
+ca33fa966298c124ecb1c4fa26f0f8eab280f623 data/primamod/loot_table/blocks/pink_garnet_ore.json
+f3fd733656476e9497850f1524fa2cdca5d85f33 data/primamod/loot_table/blocks/raw_pink_garnet_block.json
